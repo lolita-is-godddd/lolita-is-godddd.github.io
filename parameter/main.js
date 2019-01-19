@@ -32,3 +32,8 @@ function drawSquare(ctx, x1, y1, x2, y2) {
   ctx.closePath();
   ctx.stroke();
 }
+
+function background(ctx, r, g, b, a=255) {
+  ctx.fillStyle = rgbas(r, g, b, a);
+  drawSquare(ctx, -1, -1, 9999, 9999);
+}
