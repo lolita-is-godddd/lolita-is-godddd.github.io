@@ -17,7 +17,7 @@ function draw() {
 
 function rgbas(r, g, b, a=255) {
   if (a === 255) {
-    return `rgb(${r}, ${g}, ${b}`;
+    return `rgb(${r}, ${g}, ${b})`;
   } else {
     return `rgba(${r}, ${g}, ${b}, ${a/255})`;
   }
