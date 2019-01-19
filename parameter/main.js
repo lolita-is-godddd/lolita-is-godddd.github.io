@@ -9,13 +9,26 @@ function draw() {
     return false;
   }
   /* 2Dコンテキスト */
-  var ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d');
   /* 四角を描く */
+  drawSquare(ctx, 0, 0, 100, 100);
+  ctx.fillStyle = rgbas(0, 255, 0, 50);
+}
+
+function rgbas(r, g, b, a=255) {
+  if (a === 255) {
+    return `rgb(${r}, ${g}, ${b}`;
+  } else {
+    return `rgba(${r}, ${g}, ${b}, ${a/255})`;
+  }
+}
+
+function drawSquare(ctx, x1, y1, x2, y2) {
   ctx.beginPath();
-  ctx.moveTo(20, 20);
-  ctx.lineTo(120, 20);
-  ctx.lineTo(120, 120);
-  ctx.lineTo(20, 120);
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x1, y2);
+  ctx.lineTo(x2, y2);
+  ctx.lineTo(x2, y1);
   ctx.closePath();
   ctx.stroke();
 }
